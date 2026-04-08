@@ -1,24 +1,50 @@
-:root{
-    --mainframe-blue: #1e90ff;
+:root {
+    /* Colores de Marca (Mantener para identidad) */
+    --mainframe-blue: #3498db;
     --java-orange: #f8981d;
-    --spring-green: #00ff7f;
-    --light-bg: #f0f0f0;
-    --text-dark: #333333;
+    --spring-green: #6db33f;
+
+    /* Nuevos Colores de Fondo y Superficie (Dark Mode) */
+    --bg-main: #0d1117;       /* Fondo profundo */
+    --bg-card: #161b22;       /* Fondo de tarjetas */
+    --bg-tag: #21262d;        /* Fondo de etiquetas/tags */
+    
+    /* Colores de Texto */
+    --text-main: #e6edf3;     /* Blanco suave para lectura */
+    --text-muted: #8b949e;    /* Gris para descripciones */
+    
+    /* Bordes sutiles */
+    --border-color: #30363d;
 }
 
+/* Aplicación de los colores al Body */
 body {
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    background-color: var(--light-bg);
-    color: var(--text-dark);
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
+    line-height: 1.6;
+}
+
+main {
+    background-color: var(--bg-main);
+    min-height: 100vh;
+}
+
+#portafolio-projects h2,
+#titulo-proyectos {
+    color: #58a6ff;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 header {
-    background: linear-gradient(135deg, var(--mainframe-blue) 0%, #34495e 100%);
+    background: linear-gradient(135deg, #0d1117 0%, var(--mainframe-blue) 100%);
     color: white;
     padding: 4rem 1rem;
     text-align: center;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .dual-profile {
@@ -29,15 +55,18 @@ header {
 }
 
 .card {
-    background: white;
+    background: var(--bg-card);
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
+    color: var(--text-main);
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    border-color: var(--mainframe-blue);
 }
 
 .card h2 {
@@ -53,12 +82,16 @@ header {
 }
 
 .tech-tag {
-    display: inline-block;
-    background: #eee;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--bg-tag);
+    color: var(--text-muted);
     padding: 5px 12px;
     border-radius: 20px;
     font-size: 0.85rem;
     margin: 5px;
+    border: 1px solid var(--border-color);
     font-weight: bold;
 }
 
@@ -73,9 +106,9 @@ footer {
     text-align: center;
     padding: 40px 20px;
     margin-top: 50px;
-    background-color: #fff;
-    border-top: 1px solid #eaeaea;
-    color: #7f8c8d;
+    background-color: var(--bg-main);
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
     font-size: 0.9rem;
 }
 
@@ -86,7 +119,7 @@ footer p {
 .social-links a {
     font-size: 2rem;
     margin: 0 15px;
-    color : #333;
+    color : var(--text-main);
     transition: all 0.3s ease;
     text-decoration: none;
 }
@@ -104,10 +137,10 @@ footer p {
 .project-container{
     display : flex;
     gap: 40px;
-    background: white;
-    paddin: 30px;
+    background: var(--bg-card);
+    padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgb(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
     margin-bottom: 50px;
     align-items: center;
     flex-wrap: wrap;
@@ -146,11 +179,12 @@ footer p {
 }
 
 .project-details{
-    background: #f8f9fa;
+    background: var(--bg-tag);
     padding: 15px;
     border-radius: 8px;
     margin: 15px 0;
     font-size: 0.95rem;
+    color: var(--text-muted); 
 }
 
 .btn-github{
